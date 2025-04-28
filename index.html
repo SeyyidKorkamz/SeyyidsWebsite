@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seyyid | Profil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("e67c21222b6b0cee3f447b7041e230df.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      backdrop-filter: blur(3px);
+      flex-direction: column; /* Vertikale Anordnung */
+    }
+
+    .profile-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 550px;
+      width: 100%;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .profile-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .location {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .credit {
+      font-size: 12px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .icon-group {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      margin: 10px;
+    }
+
+    .icon-item i {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .icon-item span {
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .icon-item:hover i {
+      color: #00ffcc;
+    }
+
+    .sound-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .sound-icon:hover {
+      color: #00ffff;
+    }
+
+    /* Block für Textarea (Arabischer Text) */
+    .text-block {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px; /* Weniger Padding */
+      border-radius: 10px; /* Kleinere Rundung */
+      margin-top: 20px; /* Abstand von 20px zum vorherigen Block */
+      width: 90%; /* Etwas schmaler */
+      max-width: 350px; /* Kleinere maximale Breite */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .text-block h1 {
+      text-align: center; /* Text zentrieren */
+      width: 100%;
+      padding: 10px; /* Weniger Padding */
+      font-size: 20px; /* Kleinere Schriftgröße */
+      border-radius: 8px; /* Kleinere Rundung */
+      background-color: transparent; /* Kein Hintergrund */
+      color: white;
+      border: none; /* Kein Rand */
+      font-family: monospace; /* Monospace für Code-Stil */
+      white-space: pre-wrap; /* Textumbruch beibehalten */
+      margin: 0;
+      word-wrap: break-word;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .name {
+        font-size: 30px;
+      }
+
+      .location {
+        font-size: 18px;
+      }
+
+      .credit {
+        font-size: 14px;
+      }
+
+      .icon-group {
+        gap: 40px;
+      }
+
+      .icon-item i {
+        font-size: 36px;
+      }
+
+      .sound-icon {
+        font-size: 30px;
+      }
+
+      .text-block h1 {
+        font-size: 14px; /* Größere Schrift im Textblock bei kleinen Bildschirmen */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-box">
+    <i class="fas fa-volume-up sound-icon" id="soundIcon" title="Sound an/aus"></i>
+    <img src="fa4d8b1b4a8ef48893c857b5db02f117.jpg" alt="Profilbild">
+    <div class="name">Seyyid | سيد</div>
+    <div class="location">Türkei, Samsun</div>
+    <div class="credit">Credits: Ahmed Thalji ✅</div>
+
+    <div class="icon-group">
+      <a href="https://quran.com" class="icon-item" title="Qur'an" target="_blank">
+        <i class="fas fa-book-quran"></i>
+        <span>Qur'an</span>
+      </a>
+      <a href="https://sunnah.com" class="icon-item" title="Hadith" target="_blank">
+        <i class="fas fa-scroll"></i>
+        <span>Hadith</span>
+      </a>
+      <a href="https://duas.com" class="icon-item" title="Dua" target="_blank">
+        <i class="fas fa-hands"></i>
+        <span>Dua</span>
+      </a>
+    </div>
+
+    <audio id="backgroundAudio" loop>
+      <source src="muhammad-al-luhaidan-109.mp3" type="audio/mpeg">
+      Dein Browser unterstützt kein Audio.
+    </audio>
+  </div>
+
+  <!-- Neuer Block mit Textarea (Arabischer Text, kleiner) -->
+  <div class="text-block">
+    <h1>
+        "Subhanallah" (Gepriesen sei Allah)
+
+        "Alhamdulillah" (Alles Lob gebührt Allah)
+
+        "Allahu Akbar" (Allah ist der Größte)
+
+        "La ilaha illallah" (Es gibt keinen Gott außer Allah)
+
+    </h1>
+  </div>
+
+  <script>
+    const audio = document.getElementById('backgroundAudio');
+    const icon = document.getElementById('soundIcon');
+    let isPlaying = true;
+
+    window.addEventListener('load', () => {
+      audio.play().then(() => {
+        icon.classList.remove('fa-volume-mute');
+        icon.classList.add('fa-volume-up');
+        isPlaying = true;
+      }).catch(() => {
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-mute');
+        isPlaying = false;
+      });
+    });
+
+    icon.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-mute');
+      } else {
+        audio.play();
+        icon.classList.remove('fa-volume-mute');
+        icon.classList.add('fa-volume-up');
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
